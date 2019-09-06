@@ -1,0 +1,3 @@
+[submodule "src/cfeu19-sample-app"]
+	path = src/cfeu19-sample-app
+	url = https://github.com/anynines/cfeu19-sample-app

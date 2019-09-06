@@ -1,0 +1,9 @@
+set -e
+
+git clone https://github.com/anynines/cfeu19-sample-app.git
+
+cd cfeu19-sample-app
+
+make
+
+cp binaries/cfeu10-sample-app ${BOSH_INSTALL_TARGET}

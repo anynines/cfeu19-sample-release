@@ -1,0 +1,31 @@
+---
+name: cfeu19-sample
+
+releases:
+- name: cfeu19-sample
+  version: latest
+
+stemcells:
+- alias: ubuntu-xenial
+  os: ubuntu-xenial
+  version: latest
+
+update:
+  canaries: 1
+  max_in_flight: 6
+  serial: false
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000
+
+instance_groups:
+- name: cfeu19-sample
+  vm_type: small
+  instances: 1
+  azs: [z1]
+  stemcell: ubuntu-xenial
+  persistent_disk_type: small
+  jobs:
+  - name: cfeu19-sample-app
+    release: cfeu19-sample
+  networks:
+  - name: dynamic
