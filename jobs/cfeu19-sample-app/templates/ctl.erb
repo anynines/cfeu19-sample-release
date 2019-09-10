@@ -3,8 +3,8 @@
 JOB=cfeu19-sample-app
 RUN_DIR=/var/vcap/sys/run/$JOB
 LOG_DIR=/var/vcap/sys/log/$JOB
-LOG_OUT=$LOG_DIR/binding.log
-LOG_ERR=$LOG_DIR/binding.err.log
+LOG_OUT=$LOG_DIR/cfeu19-sample.log
+LOG_ERR=$LOG_DIR/cfeu19-sample.err.log
 PIDFILE=$RUN_DIR/pid
 
 case $1 in
@@ -13,18 +13,19 @@ case $1 in
     mkdir -p $RUN_DIR $LOG_DIR
     chown -R vcap:vcap $RUN_DIR $LOG_DIR
 
-    /var/vcap/packages/$JOB/$JOB -pid $PIDFILE > $LOG_OUT 2> $LOG_ERR &
+    /var/vcap/packages/$JOB/$JOB > $LOG_OUT 2> $LOG_ERR &
 
+    echo $! > $PIDFILE
     ;;
 
   stop)
-    kill -9 'cat $PIDFILE'
+    kill -9 "$(cat $PIDFILE)"
     rm -f $PIDFILE
 
     ;;
 
   *)
-    echo "Usage: ctl {star|stop}"
+    echo "Usage: ctl {start|stop}"
     ;;
 
 esac
