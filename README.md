@@ -20,3 +20,13 @@ Before creating and uploading the BOSH release to the director, the git submodul
 git submodule init
 git submodule update
 ```
+
+## Usage
+
+An example manifest to deploy the BOSH release can be found inside the **examples** folder.
+
+You can deploy it using
+
+```sh
+bosh deploy examples/manifest.yml -d cfeu19-sample
+```
