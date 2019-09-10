@@ -8,6 +8,7 @@ image_resource:
 
 inputs:
   - name: boshrelease
+  - name: app-release
 
 outputs:
   - name: updated-app
