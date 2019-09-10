@@ -1,6 +1,6 @@
 set -e
 
-git clone https://github.com/anynines/cfeu19-sample-app.git
+export PATH=$PATH:/var/vcap/packages/go/bin
 
 cd cfeu19-sample-app
 

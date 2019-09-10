@@ -1,6 +1,8 @@
 ---
 name: cfeu19-sample-app
 
-dependencies: []
+dependencies:
+  - go
 
-files: []
+files:
+  - cfeu19-sample-app/**/*
