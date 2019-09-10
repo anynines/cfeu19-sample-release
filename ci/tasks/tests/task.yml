@@ -1,0 +1,16 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: avarteqgmbh/pipeline-utils
+
+inputs:
+  - name: boshrelease
+
+run:
+  path: boshrelease/ci/tasks/tests/task.sh
+
+params:
+  BOSHRELEASE_PRIVATE_CONFIG:
