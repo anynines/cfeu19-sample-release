@@ -16,6 +16,7 @@ rsync -a ${PWD}/boshrelease/ ${updated_app_repository_dir}
 cd ${updated_app_repository_dir}
 
 echo 'Update app submodule...'
+git -C src/cfeu19-sample-app checkout ${app_tag}
 
 echo 'Commit updated app...'
 git add src/cfeu19-sample-app
