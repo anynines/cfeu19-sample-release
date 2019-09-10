@@ -6,6 +6,7 @@ set -o nounset # Report the usage of uninitialized variables
 echo "Update App"
 
 updated_app_repository_dir=${PWD}/updated-app
+app_src_dir=src/cfeu19-sample-app
 app_tag=$(<${PWD}/app-release/tag)
 
 echo 'Clone repository...'
@@ -16,10 +17,10 @@ rsync -a ${PWD}/boshrelease/ ${updated_app_repository_dir}
 cd ${updated_app_repository_dir}
 
 echo 'Update app submodule...'
-git -C src/cfeu19-sample-app checkout ${app_tag}
+git -C ${app_src_dir} checkout ${app_tag}
 
 echo 'Commit updated app...'
-git add src/cfeu19-sample-app
+git add ${app_src_dir}
 git commit -m "Update App to ${app_tag}"
 
 echo 'Done'
