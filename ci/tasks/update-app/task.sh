@@ -3,7 +3,7 @@
 set -o errexit # Exit immediately if a simple command exits with a non-zero status
 set -o nounset # Report the usage of uninitialized variables
 
-echo "Update App"
+echo 'Update App'
 
 updated_app_repository_dir=${PWD}/updated-app
 app_src_dir=src/cfeu19-sample-app
@@ -16,11 +16,14 @@ echo 'Clone repository...'
 rsync -a ${PWD}/boshrelease/ ${updated_app_repository_dir}
 cd ${updated_app_repository_dir}
 
-echo 'Update app submodule...'
-git -C ${app_src_dir} checkout ${app_tag}
+# Make it idempotent
+if ! [ "$(git -C ${app_src_dir} describe --tags --always)" == "${app_tag}" ]; then
+  echo 'Update app submodule...'
+  git -C ${app_src_dir} checkout ${app_tag}
 
-echo 'Commit updated app...'
-git add ${app_src_dir}
-git commit -m "Update App to ${app_tag}"
+  echo 'Commit updated app...'
+  git add ${app_src_dir}
+  git commit -m "Update App to ${app_tag}"
+fi
 
 echo 'Done'
