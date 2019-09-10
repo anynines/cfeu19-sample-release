@@ -21,11 +21,18 @@ git submodule init
 git submodule update
 ```
 
+Afterwards, the BOSH release itself can be created and uploaded using
+
+```sh
+bosh create-release
+bosh upload-release
+```
+
 ## Usage
 
 An example manifest to deploy the BOSH release can be found inside the **examples** folder.
 
-You can deploy it using
+This manifest can be deployed using
 
 ```sh
 bosh deploy examples/manifest.yml -d cfeu19-sample
