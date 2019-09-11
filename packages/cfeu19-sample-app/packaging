@@ -1,0 +1,9 @@
+set -e
+
+export PATH=$PATH:/var/vcap/packages/go/bin
+
+cd cfeu19-sample-app
+
+go build
+
+cp cfeu19-sample-app ${BOSH_INSTALL_TARGET}

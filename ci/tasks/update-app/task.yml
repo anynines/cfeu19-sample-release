@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: avarteqgmbh/pipeline-utils
+
+inputs:
+  - name: boshrelease
+  - name: app-release
+
+outputs:
+  - name: updated-app
+
+run:
+  path: boshrelease/ci/tasks/update-app/task.sh

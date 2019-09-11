@@ -1,0 +1,7 @@
+set -e
+
+wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz
+
+tar xzf go*.linux-amd64.tar.gz
+
+cp -R go/* ${BOSH_INSTALL_TARGET}

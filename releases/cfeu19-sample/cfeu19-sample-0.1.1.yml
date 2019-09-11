@@ -1,0 +1,21 @@
+name: cfeu19-sample
+version: 0.1.1
+commit_hash: c640db4
+uncommitted_changes: false
+jobs:
+- name: cfeu19-sample-app
+  version: 57e32700bf21aee055cc89a894c40918d9efbbc2
+  fingerprint: 57e32700bf21aee055cc89a894c40918d9efbbc2
+  sha1: afaeb4044fa34472b0dc942322bf4bb0c79107e3
+packages:
+- name: cfeu19-sample-app
+  version: 21cbfa8470c1021f08aee729d9a0943fd8f67b63
+  fingerprint: 21cbfa8470c1021f08aee729d9a0943fd8f67b63
+  sha1: 811ea460c7bc1da97e38d2aa6a7bbc80abb2d5ea
+  dependencies:
+  - go
+- name: go
+  version: 17107c35770a81be4f3ef08f1c6a318453935f25
+  fingerprint: 17107c35770a81be4f3ef08f1c6a318453935f25
+  sha1: 35da6df7cca028c05931498398acf13325d397c9
+  dependencies: []

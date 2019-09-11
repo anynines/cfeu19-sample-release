@@ -1,0 +1,5 @@
+check process cfeu19-sample-app
+  with pidfile /var/vcap/sys/run/cfeu19-sample-app/pid
+  start program "/var/vcap/jobs/cfeu19-sample-app/bin/ctl start"
+  stop program "/var/vcap/jobs/cfeu19-sample-app/bin/ctl stop"
+  group vcap
