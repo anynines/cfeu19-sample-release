@@ -2,10 +2,6 @@
 
 This repository contains the BOSH release for the talk "Automated Side-by-Side development of applications for BOSH and Kubernetes" at the CF Summit Europe 2019.
 
-1. Architecture
-2. Installation
-3. Usage
-
 ## Architecture
 
 The BOSH release contains a **packaging** script to compile and a **job** to start the sample application which can be found here: https://github.com/anynines/cfeu19-sample-app
