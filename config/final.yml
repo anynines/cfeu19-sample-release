@@ -1,1 +1,7 @@
 name: cfeu19-sample
+blobstore:
+  provider: s3
+  options:
+    bucket_name: cf-summit-2019
+    endpoint: https://s3-eu-central-1.amazonaws.com
+    region: eu-central-1
